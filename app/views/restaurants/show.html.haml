@@ -8,5 +8,6 @@
       = review.thoughts
       \:
       \#{review.rating}
-      \:
-      = link_to "Delete review", restaurant_review_path(@restaurant, review), method: :delete
+      - if review.user == current_user
+        \:
+        = link_to "Delete review", restaurant_review_path(@restaurant, review), method: :delete
