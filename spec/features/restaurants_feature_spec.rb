@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'restaurants' do
-
   before do
     @user = User.create(email: "test@test.com", password: "testtest", password_confirmation: "testtest")
     visit('/')
@@ -51,8 +50,6 @@ feature 'restaurants' do
         expect(page).to have_content('error')
       end
     end
-
-
   end
 
   context 'viewing restaurants' do
@@ -93,6 +90,4 @@ feature 'restaurants' do
       expect(page).to have_content("Restaurant deleted succesfully")
     end
   end
-
-
 end
