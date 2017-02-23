@@ -7,7 +7,11 @@ feature 'Users can review restaurants' do
   end
 
   scenario 'by creating a review via a form' do
-    visit '/restaurants'
+    visit('/')
+    click_link('Sign in')
+    fill_in('Email', with: 'test@test.com')
+    fill_in('Password', with: 'testtest')
+    click_button('Log in')
     click_link 'Review Los pollos hermanos'
     fill_in 'Thoughts', with: 'Although serving chicken, it is fishy'
     select '1', from: 'Rating'

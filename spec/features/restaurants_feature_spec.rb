@@ -3,13 +3,12 @@ require 'rails_helper'
 feature 'restaurants' do
 
   before do
-    visit('/')
-    click_link('Sign up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
-    click_button('Sign up')
     @user = User.create(email: "test@test.com", password: "testtest", password_confirmation: "testtest")
+    visit('/')
+    click_link('Sign in')
+    fill_in('Email', with: 'test@test.com')
+    fill_in('Password', with: 'testtest')
+    click_button('Log in')
   end
 
   context 'no restaurants have been added' do
