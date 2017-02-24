@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../helpers/restaurants_helper_spec'
+require_relative '../helpers/restaurants_helper'
 
 feature 'restaurants' do
 

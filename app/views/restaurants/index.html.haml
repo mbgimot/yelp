@@ -1,6 +1,7 @@
 - if @restaurants.all.any?
   - @restaurants.all.each do |restaurant|
     %h2= link_to restaurant.name, restaurant_path(restaurant)
+    %h4="Average rating: #{star_rating(restaurant.average_rating)}"
     = restaurant.reviews.last.thoughts if restaurant.reviews.any?
     %h4
       = link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)
